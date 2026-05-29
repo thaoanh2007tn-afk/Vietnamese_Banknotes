@@ -3,18 +3,12 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 
-# ============================================================
-# 1. CẤU HÌNH TRANG
-# ============================================================
 st.set_page_config(
     page_title="Nhận Diện Tiền Việt Nam",
     page_icon="🇻🇳",
     layout="wide"
 )
 
-# ============================================================
-# 2. CSS – GIAO DIỆN VĂN HOÁ VIỆT NAM
-# ============================================================
 st.markdown("""
 <style>
 /* ─── Google Fonts ─────────────────────────────────────────── */
@@ -299,9 +293,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# 3. DANH SÁCH NHÃN + THÔNG TIN MỆH GIÁ
-# ============================================================
+
 LABELS = [
     '0 Đồng (Không phải tiền)',
     '200 Đồng',
@@ -316,8 +308,6 @@ LABELS = [
     '200.000 Đồng',
     '500.000 Đồng',
 ]
-
-# icon | loại chất liệu | màu sắc chủ đạo | hình ảnh trên tờ tiền
 BANKNOTE_INFO = {
     '0 Đồng (Không phải tiền)':  ('❌', 'invalid',  '—',         '—'),
     '200 Đồng':                  ('🟤', 'cotton',   'Nâu xanh',  'Hồ Chí Minh / Chùa Một Cột'),
@@ -340,34 +330,24 @@ def get_badge_html(loai):
         return '<span class="badge badge-cotton">Cotton</span>'
     return '<span class="badge badge-invalid">Không hợp lệ</span>'
 
-# ============================================================
-# 4. TẢI MÔ HÌNH
-# ============================================================
 @st.cache_resource
 def load_my_model():
     return tf.keras.models.load_model('vietnamese_money_v1.h5')
 
 model = load_my_model()
 
-# ============================================================
-# 5. BANNER
-# ============================================================
 st.markdown("""
 <div class="banner">
     <span class="banner-deco left">🏮</span>
     <span class="banner-deco right">🌸</span>
     <span class="banner-star">⭐</span>
     <h1>Nhận Diện Tiền Việt Nam</h1>
-    <p class="sub">🪷 Trí tuệ nhân tạo – Tự hào hồn Việt 🪷</p>
+    <p class="sub">🪷 Tự hào vóc dáng cờ hoa - Trí tuệ nhân tạo soi ra đồng tiền 🪷</p>
 </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# 6. LAYOUT 2 CỘT
-# ============================================================
 col_left, col_right = st.columns([1, 1], gap="large")
 
-# ── CỘT TRÁI: Upload + Ảnh preview ────────────────────────
 with col_left:
     st.markdown("""
     <div class="guide-card">
@@ -391,10 +371,7 @@ with col_left:
         image = Image.open(uploaded_file)
         st.image(image, caption="📸 Ảnh vừa tải lên", use_column_width=True)
 
-# ── CỘT PHẢI: Kết quả ────────────────────────────────────
 with col_right:
-
-    # Divider + tiêu đề
     st.markdown("""
     <div class="divider">
         <div class="divider-line"></div>
@@ -416,7 +393,6 @@ with col_right:
         """, unsafe_allow_html=True)
     else:
         with st.spinner('🔍 AI đang phân tích...'):
-            # Tiền xử lý
             img_rgb   = image.convert('RGB')
             img_res   = img_rgb.resize((224, 224))
             img_array = np.array(img_res) / 255.0
@@ -432,10 +408,8 @@ with col_right:
             )
 
         if confidence > 50:
-            # Chọn màu thanh confidence
             bar_class = "conf-bar-fill" if confidence >= 70 else "conf-bar-fill low"
 
-            # Tính top-3
             top3_idx = np.argsort(predictions[0])[::-1][:3]
 
             st.markdown(f"""
@@ -499,9 +473,6 @@ with col_right:
             </div>
             """, unsafe_allow_html=True)
 
-# ============================================================
-# 7. FOOTER
-# ============================================================
 st.markdown("""
 <div class="footer">
     🇻🇳 <span>Nhận Diện Tiền Việt Nam</span> &nbsp;·&nbsp;
