@@ -455,21 +455,6 @@ with col_right:
                     <div class="conf-bar-bg">
                         <div class="{bar_class}" style="width:{min(confidence,100):.1f}%"></div>
                     </div>
-
-                    <div class="info-grid" style="margin-top:14px">
-                        <div class="info-chip">
-                            <div class="info-chip-label">Chất liệu</div>
-                            <div class="info-chip-value">{get_badge_html(loai)}</div>
-                        </div>
-                        <div class="info-chip">
-                            <div class="info-chip-label">Màu chủ đạo</div>
-                            <div class="info-chip-value">{mau}</div>
-                        </div>
-                        <div class="info-chip" style="grid-column:1/-1">
-                            <div class="info-chip-label">Hình ảnh trên tờ tiền</div>
-                            <div class="info-chip-value" style="font-size:0.88rem">{hinh}</div>
-                        </div>
-                    </div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
