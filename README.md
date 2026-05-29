@@ -118,12 +118,12 @@ streamlit run app.py
 
 | Công nghệ | Mục đích |
 |-----------|----------|
-| ![Python] | Ngôn ngữ lập trình chính |
-| ![TensorFlow]| Huấn luyện & chạy mô hình CNN |
-| ![Keras] | API xây dựng mô hình |
-| ![Streamlit] | Giao diện web |
-| ![NumPy] | Xử lý mảng số |
-| ![Pillow] | Xử lý ảnh |
+| Python | Ngôn ngữ lập trình chính |
+| TensorFlow| Huấn luyện & chạy mô hình CNN |
+| Keras | API xây dựng mô hình |
+| Streamlit | Giao diện web |
+| NumPy | Xử lý mảng số |
+| Pillow | Xử lý ảnh |
 
 ---
 
@@ -136,8 +136,8 @@ streamlit run app.py
 ---
 
 ## 👨‍💻 Tác giả
-Trần Ngọc Thảo Anh
-Lê Thái Bảo
+Trần Ngọc Thảo Anh - 
+Lê Thái Bảo - 
 Lê Thị Như Quỳnh
 
 ---
