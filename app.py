@@ -112,7 +112,7 @@ if uploaded_file is not None:
             st.markdown(f"""
                 <div class="result-box">
                     <h3 style="color: #DA251D; margin-top: 0;">✅ Kết Quả: {result_text}</h3>
-                    <p style="font-size: 16px; margin-bottom: 0;"><b>Độ tự tin của AI:</b> {confidence:.2f}%</p>
+                    <p style="font-size: 16px; margin-bottom: 0;"><b>Độ tin cậy của AI:</b> {confidence:.2f}%</p>
                 </div>
             """, unsafe_allow_html=True)
             st.balloons() 
