@@ -71,7 +71,7 @@ LABELS = [
 @st.cache_resource
 def load_my_model():
     # Thay tên file dưới đây bằng tên file mô hình bạn đã lưu (ví dụ: .h5 hoặc .keras)
-    return tf.keras.models.load_model('vietnamese_banknote_12classes.keras')
+    return tf.keras.models.load_model('vietnamese_money_v1.h5')
 
 model = load_my_model()
 
