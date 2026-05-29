@@ -127,14 +127,6 @@ streamlit run app.py
 
 ---
 
-## ⚠️ Lưu ý
-
-- Dự án phục vụ mục đích **học tập và nghiên cứu** trong khuôn khổ môn Trí Tuệ Nhân Tạo.
-- Hình ảnh tờ tiền chỉ mang tính **minh họa giáo dục**, không sử dụng để làm giả tiền.
-- Độ chính xác phụ thuộc vào chất lượng ảnh đầu vào và dữ liệu huấn luyện.
-
----
-
 ## 👨‍💻 Tác giả
 Trần Ngọc Thảo Anh - 
 Lê Thái Bảo - 
